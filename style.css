@@ -50,3 +50,12 @@ header section{
     text-underline-offset: 3px;
     color: rgb(4, 30, 58);
 }
+
+.nav-titulo, .carrinho:hover{
+    cursor: pointer;
+}
+
+.title-slogan, .subtitle-slogan{
+    text-align: center;
+    margin-top: 3vh;
+}
