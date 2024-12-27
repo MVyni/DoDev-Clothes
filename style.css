@@ -5,6 +5,7 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
+    font-family: "Libre Baskerville", serif;
 }  
 
 header section{
@@ -57,5 +58,26 @@ header section{
 
 .title-slogan, .subtitle-slogan{
     text-align: center;
-    margin-top: 3vh;
+    margin: 3vh 0px 3vh 0px;
+    color: rgb(4, 30, 58);
 }
+
+.img-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-imagens{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+h4{
+    text-align: center;
+    margin: 10vh 0px 10vh 0px;
+    color: rgb(4, 30, 58);
+}
+
