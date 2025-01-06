@@ -77,7 +77,60 @@ header section{
 
 h4{
     text-align: center;
+    font-size: 1.2rem;
     margin: 10vh 0px 10vh 0px;
     color: rgb(4, 30, 58);
 }
 
+.subtitle-look{
+    font-size: 0.8rem;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    width: 40vw;
+    height: 40vh;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input{
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid rgb(4, 30, 58);
+    margin: 0.6rem 0;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+.input-box label{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgb(4, 30, 58);
+}
+
+.button-form button{
+    width: 80%;
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+    margin-top: 1.5rem;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
