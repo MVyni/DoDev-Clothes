@@ -35,7 +35,7 @@ header section{
     font-family:"Libre Baskerville", serif;
 }
 
-.nav-bar .carrinho{
+.nav-bar{
     margin-left: auto;
 
 }
@@ -52,7 +52,7 @@ header section{
     color: rgb(4, 30, 58);
 }
 
-.nav-titulo, .carrinho:hover{
+.nav-titulo, #carrinho:hover{
     cursor: pointer;
 }
 
@@ -133,4 +133,31 @@ h4{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.button-subtitle{
+    width: 100px;
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#menu-burger{
+    display: none;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+@media(max-width: 800px){
+    .menu li{
+        display: none;
+    }
+
+    #menu-burger{
+        display: block;
+    }
 }

@@ -6,22 +6,22 @@
     <title>DoDev Clothes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0cb6c25f01.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <section class="nav-bar">
-            <ul class="menu">
-                <li class="nav-titulo"><p>DoDev Clothes</p></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Sobre nós</a></li>
-                <li class="carrinho">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </li>
-            </ul>
+            <i id="menu-burger" class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            <div id="itens">
+                <ul class="menu">
+                    <li class="nav-titulo"><p>DoDev Clothes</p></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+                <i id="carrinho" class="fa-solid fa-cart-shopping"></i>
+            
         </section>
     </header>
 
@@ -94,5 +94,7 @@
             </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
