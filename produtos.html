@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoDev Clothes</title>
+    <title>Produtos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/0cb6c25f01.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,54 +14,46 @@
 
             <div id="itens">
                 <ul class="menu">
-                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">Sobre nós</a></li>
                 </ul>
             </div>
                 <i id="carrinho" class="fa-solid fa-cart-shopping"></i>
-            
         </section>
     </header>
 
-    <main class="content-home">
-        <section class="produtos">
-            <h1 class="title-slogan">Seu armário tech.</h1>
-            <br>
-            <div class="subtitle-slogan">
-                <p>As roupas tech mais famosas do Brasil.</p>
-                <button class="button-subtitle">Comprar</button>
-            </div>
-            <br>
-            <div class="img-principal">
-                <a href="produtos.html">
-                    <img src="img/moletom.jpg" alt="roupa principal" width="700" height="500">
-                </a>
+    <main>
+        <section class="content-produtos">
+            <div class="roupas">
+                <div class="roupa01">
+                    <img src="img/t-shirt&jeans.jpg" alt="t-shirt preta e jeans" width="320" height="450">
+                    
+                    <div class="roupa02">
+                        <img src="img/moletom.jpg" alt="moletom" width="100" height="150">
+      
+                        <img src="img/t-shir black.jpg" alt="t-shirt preta" width="100" height="150">
+           
+                        <img src="img/look-completo.jpg" alt="look completo" width="100" height="150">
+                    </div>
+                </div>
             </div>
 
-            <h4>Principais modelos</h4>
-
-            <div class="content-imagens">
-                <div class="img-lookCompleto">
-                    <a href="produtos.html">
-                        <img src="img/look-completo.jpg" alt="look completo" height="300" width="200">
-                    </a>
-                    <p class="subtitle-look">Tech T-shirt & Calça</p>
+            <div class="content-info">
+                <div class="info-roupa">
+                    <p>T-shirt tech e jeans</p>
+                    <p>R$250.00</p>
                 </div>
-                <div class="img-mangaLonga">
-                    <a href="produtos.html">
-                        <img src="img/camiseta-manga-longa.jpg" alt="camiseta manga longa" height="300" width="200">
-                    </a>
-                    <p class="subtitle-look">Tech T-shirt Manga Longa</p>
-                </div>
-                <div class="img-tshirtJeans">
-                    <a href="produtos.html"
-                    ><img src="img/t-shirt&jeans.jpg" alt="t-shirt e jeans" height="300" width="200">
-                </a>
-                    <p class="subtitle-look">Tech T-shirt</p>
+                
+                <div class="info">
+                    <label for="quant">Quantidade</label>
+                    <input type="number">
+                    <button>Adicionar</button>
                 </div>
             </div>
+
         </section>
-
+    </main>
+    <footer>
         <section class="formulario">
             <div class="form">
                 <h4 class="subtitle-form">Receba Promoções</h4>
@@ -93,8 +83,6 @@
                 </form>
             </div>
         </section>
-    </main>
-
-    <script src="script.js"></script>
+    </footer>
 </body>
 </html>
