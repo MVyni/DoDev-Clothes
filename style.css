@@ -183,7 +183,69 @@ h4{
     cursor: pointer;
 }
 
-.info{
+.content-info{
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
+    margin-left: -10rem;
+}
+
+.info-roupa{
+    color: rgb(4, 30, 58);
+    margin-bottom: 2rem;
+}
+
+.info{
+    color: rgb(4, 30, 58);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.contador, .mais, .menos{
+    border: none;
+    background-color:#fff;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menos:hover{
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+}
+
+.mais:hover{
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+}
+
+.adicionar{
+    padding: 5px;
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.adicionar:hover{
+    background-color: rgba(4, 30, 58, 0.934);
+}
+
+.tamanhos{
+    display: flex;
+    justify-content: space-between;   
+    margin-bottom: 1rem;
+}
+
+.tamanhos button{
+    padding: 5px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.tamanhos button:hover{
+    background-color: rgb(4, 30, 58);
+    color: #fff;
 }
