@@ -51,14 +51,23 @@ header section{
     color: rgb(4, 30, 58);
 }
 
+#carrinho{
+    color: rgb(4, 30, 58);
+}
 .nav-titulo, #carrinho:hover{
     cursor: pointer;
+    color: rgba(4, 30, 58, 0.934);
 }
 
 .title-slogan, .subtitle-slogan{
     text-align: center;
     margin: 3vh 0px 3vh 0px;
     color: rgb(4, 30, 58);
+}
+
+.button-subtitle a{
+    text-decoration: none;
+    color: white;
 }
 
 .img-principal{
