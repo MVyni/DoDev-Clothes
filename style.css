@@ -249,3 +249,12 @@ h4{
     background-color: rgb(4, 30, 58);
     color: #fff;
 }
+
+.sobre{
+    width: 80%;
+    margin: 5rem auto;
+}
+.sobre h3, .sobre p{
+    color: rgb(4, 30, 58);
+    margin-bottom: 2rem;
+}
