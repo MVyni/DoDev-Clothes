@@ -17,16 +17,62 @@ header section{
 
 }
 
-.mobile-menu{
-   position: fixed;
-   left: -300px;
-   top: 0;
-   width: 300px;
-   height: 50%;
-   background-color: rgb(4, 30, 58);
-   z-index: 2;
+#menuBurger{
+    display: none;
+    color: rgb(4, 30, 58);
+    margin-left: 2vw;
+    cursor: pointer;
 }
 
+.mobile-menu{
+   position: fixed;
+   left: -200px;
+   top: 0;
+   width: 200px;
+   height: 30%;
+   background-color: rgb(4, 30, 58);
+   z-index: 2;
+   transition: all 0.5s ease;
+}
+
+.mobile-menu.ativo{
+    left: 0;
+}
+
+.mobile-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 50px 30px;
+}
+
+.mobile-menu ul li a{
+    color: #fff;
+}
+
+.mobile-menu ul li a:hover{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #fff;
+}
+
+.mobile-menu p{
+    color: #fff;
+    font-size: 12px;
+    margin: 20px 10px;
+}
+
+.menuBurger{
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+.menuBurger.ativo{
+    left: 220px;
+}
 
 .nav-bar .menu{
     display: flex;
@@ -46,7 +92,7 @@ header section{
     font-family:"Libre Baskerville", serif;
 }
 
-.nav-bar, i#carrinho{
+.nav-bar, #carrinho{
     margin-left: auto;
 }
 
@@ -165,12 +211,6 @@ h4{
     cursor: pointer;
 }
 
-#menuBurger{
-    display: none;
-    margin-left: 2vw;
-    cursor: pointer;
-}
-
 .content-produtos{
     width: 100%;
     height: 100%;
@@ -278,15 +318,6 @@ h4{
         display: block;
     }
 
-   .mobile-menu.ativo{
-    left: 0;
-   }
-
-    .mobile-menu ul{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
 
     .mobile-menu .nav-item{
         display: block;
