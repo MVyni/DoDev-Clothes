@@ -6,7 +6,7 @@
     list-style: none;
     box-sizing: border-box;
     font-family: "Libre Baskerville", serif;
-}  
+}
 
 header section{
     display: flex;
@@ -60,6 +60,7 @@ header section{
     color: #fff;
     font-size: 12px;
     margin: 20px 10px;
+    cursor: pointer;
 }
 
 .menuBurger{
@@ -221,6 +222,7 @@ h4{
     width: 50%;
     display: flex;
     justify-content: center;
+    margin: 50px 0px 0px 100px ;
 }
 
 .roupa02{
@@ -291,6 +293,7 @@ h4{
 .tamanhos button{
     padding: 5px;
     background-color: #fff;
+    color: rgb(4, 30, 58);
     border: none;
     cursor: pointer;
 }
@@ -318,9 +321,16 @@ h4{
         display: block;
     }
 
-
     .mobile-menu .nav-item{
         display: block;
-        
+    }
+
+    .img-prin{
+        width: 400px;
+        height: 300px;
+    }
+
+    .content-info{
+        margin-left: 50px;
     }
 }
