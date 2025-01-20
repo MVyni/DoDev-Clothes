@@ -27,10 +27,9 @@
                 <ul class="menu">
                     <li><a href="produtos.html">Produtos</a></li>
                     <li><a href="sobre.html">Sobre nós</a></li>
+                    <li><a href="carrinho.html"><i id="carrinho" class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
-                
             </div>
-            <i id="carrinho" class="fa-solid fa-cart-shopping"></i>
             
         </section>
     </header>
@@ -75,30 +74,30 @@
         </section>
 
         <section class="formulario">
-            <div class="form">
+            <div class="cadastro">
                 <h4 class="subtitle-form">Receba Promoções</h4>
 
-                <form action="#">
+                <form  id="form" action="https://apigenerator.dronahq.com/api/kfuTuMtf/form" method="post">
                     <div class="input-group">
                         <div class="input-box">
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="João">
+                            <input type="text" id="nome" name="nome" placeholder="João" required>
                         </div>
                         <div class="input-box">
                             <label for="sobreNome">Sobrenome:</label>
-                            <input type="text" id="sobreNome" name="sobreNome" placeholder="Ferreira">
+                            <input type="text" id="sobreNome" name="sobreNome" placeholder="Ferreira" required>
                         </div>
                         <div class="input-box">
                             <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" placeholder="dodevclothes@gmail.com">
+                            <input type="email" id="email" name="email" placeholder="dodevclothes@gmail.com" required>
                         </div>
                         <div class="input-box">
                             <label for="telefone">Telefone:</label>
-                            <input type="tel" id="telefone" name="tel" placeholder="+55 (21) 91122-3344">
+                            <input type="tel" id="tel" name="tel" placeholder="+55 (21) 91122-3344" required>
                         </div>
                     </div>
                     <div class="button-form">
-                        <button>Enviar</button>
+                        <button type="submit" name="button" value="submit" id="btnSubmit">Enviar</button>
                     </div>
                 </form>
             </div>
