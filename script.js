@@ -6,10 +6,11 @@ const sobreNomeForm = document.getElementById("sobreNome");
 const emailForm = document.getElementById("email");
 const telForm = document.getElementById("tel");
 const form = document.getElementById("form");
-const roupas = document.querySelector(".roupa02");
+const roupas = document.querySelector(".roupas");
 const roupa1 = document.querySelector("#roupa1");
 const roupa2 = document.querySelector("#roupa2");
 const roupa3 = document.querySelector("#roupa3");
+const roupaP = document.querySelector(".roupaP");
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
@@ -96,10 +97,10 @@ form.addEventListener("submit", (e) => {
 
 //MUDANDO IMAGEM NA PÁGINA PRODUTOS
 function changeImg() {
-  roupa2.addEventListener("click", () => {
-    let srcFloat = roupa1.src;
+  roupas.addEventListener("click", (e) => {
+    const roupaAux = roupa1.src;
 
-    roupa1.src = roupa2.src;
-    roupa2.src = srcFloat;
+    roupa1.src = e.target.src;
+    e.target.src = roupaAux;
   });
 }
