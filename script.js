@@ -8,9 +8,10 @@ const telForm = document.getElementById("tel");
 const form = document.getElementById("form");
 const roupas = document.querySelector(".roupas");
 const roupa1 = document.querySelector("#roupa1");
-const roupa2 = document.querySelector("#roupa2");
 const roupa3 = document.querySelector("#roupa3");
-const roupaP = document.querySelector(".roupaP");
+const nomeRoupa = document.querySelector(".nome");
+const valor = document.querySelector(".valor");
+const infosRoupa = document.querySelector(".info-roupa");
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
