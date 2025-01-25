@@ -6,12 +6,16 @@ const sobreNomeForm = document.getElementById("sobreNome");
 const emailForm = document.getElementById("email");
 const telForm = document.getElementById("tel");
 const form = document.getElementById("form");
-const roupas = document.querySelector(".roupas");
+const roupas = document.querySelector(".roupaP");
 const roupa1 = document.querySelector("#roupa1");
-const roupa3 = document.querySelector("#roupa3");
+const roupa2 = document.querySelector(".roupa02");
+const imgP = document.querySelector(".roupaP");
+const imgP01 = document.querySelector("#imgP1");
+const imgP02 = document.querySelector("#imgP2");
+const imgP03 = document.querySelector("#imgP3");
 const nomeRoupa = document.querySelector(".nome");
 const valor = document.querySelector(".valor");
-const infosRoupa = document.querySelector(".info-roupa");
+const infosRoupa = document.querySelector(".info-roupa .nome");
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
@@ -97,11 +101,37 @@ form.addEventListener("submit", (e) => {
 });
 
 //MUDANDO IMAGEM NA PÁGINA PRODUTOS
+
 function changeImg() {
-  roupas.addEventListener("click", (e) => {
+  roupa2.addEventListener("click", (e) => {
     const roupaAux = roupa1.src;
+    const imgClicada = e.target.src.split("/").pop();
+    const imgP001 = imgP01.src.split("/").pop();
+    const imgP002 = imgP02.src.split("/").pop();
+    const imgP003 = imgP03.src.split("/").pop();
+    const imgG = roupa1.src.split("/").pop();
 
     roupa1.src = e.target.src;
     e.target.src = roupaAux;
-  });
+
+    switch(imgClicada){
+      case imgP001:
+        infosRoupa.innerText = "Moletom Cinza"
+        break;
+
+        case imgP002:
+          infosRoupa.innerText = "T-shirt black"
+          break;
+
+        case imgP003:
+          infosRoupa.innerText = "T-shirt black e Calça Jeans"
+          break;
+
+        case imgG:
+          infosRoupa.innerText = "T-shirt black e Jeans"
+          break;
+        
+      default: "";
+    }
+ });
 }
