@@ -8,10 +8,13 @@ const telForm = document.getElementById("tel");
 const form = document.getElementById("form");
 const roupa1 = document.querySelector("#roupa1");
 const roupa2 = document.querySelector(".roupa02");
-const imgP = document.querySelector(".roupaP");
-const nomeRoupa = document.querySelector(".nome");
 const infoRoupaValor = document.querySelector(".info-roupa .valor");
 const infoRoupaNome = document.querySelector(".info-roupa .nome");
+const btnMais = document.querySelector(".mais");
+const btnMenos = document.querySelector(".menos");
+const contador = document.querySelector("#contador");
+const tam = document.querySelector(".tamanhos");
+const btnEnviar = document.querySelector(".adicionar");
 
 menuBurger.addEventListener("click", () => {
     mobileMenu.classList.toggle("ativo");
@@ -51,6 +54,59 @@ roupa2.addEventListener("click", (e) => {
       default: "";
     }
  });
+
+ //SALVANDO QUANTIDADE DAS ROUPAS
+btnMais.addEventListener("click", () => {
+    contador.value++
+    window.localStorage.setItem("Quantidade", contador.value);
+});
+
+btnMenos.addEventListener("click", () => {
+    if(contador.value > 1){
+    contador.value--
+    window.localStorage.setItem("Quantidade", contador.value);
+    return;
+    }
+});
+
+
+//SALVANDO TAMANHO DA ROUPA
+function saveTam(tam){
+    window.localStorage.setItem("Tamanho", tam);
+}
+
+tam.addEventListener("click", (e) => {
+    saveTam(e.target.value);
+})
+
+
+//ENVIADO PRODUTOS PRO CARRINHO E MSG DE ÊXITO
+
+
+btnEnviar.addEventListener("click", () => {
+    window.localStorage.getItem("Quantidade");
+    const tamProd = window.localStorage.getItem("Tamanho");
+    
+    switch(tamProd){
+        case "S":
+            alert("Produto adicionado ao carrinho.");
+            break;
+        case "M":
+            alert("Produto adicionado ao carrinho.");
+            break;
+        case "L":
+            alert("Produto adicionado ao carrinho.");
+            break;
+        case "XL":
+            alert("Produto adicionado ao carrinho.");
+            break;
+        default:
+            alert("Por favor, selecione um tamanho.");
+            break;
+    }
+    
+});
+
 
  //SALVANDO FORM NO LOCAL STORAGE
 function saveName(text) {

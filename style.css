@@ -254,7 +254,7 @@ h4{
     font-size: 0.8rem;
 }
 
-.contador, .mais, .menos{
+.mais, .menos, #contador{
     border: none;
     background-color:#fff;
     padding: 5px;
