@@ -35,17 +35,16 @@
         </section>
     </header>
 
-    <main class="tudo">
+    <main>
         <section class="content-produtos">
             <div class="roupas">
                 <div class="roupa01">
                     <img src="img/t-shirt&jeans.jpg" alt="t-shirt preta e jeans" width="320" height="450" id="roupa1">
                     
-                    <div class="roupa02" onclick="changeImg()">
-                        
+                    <div class="roupa02">
                         
                         <img src="img/moletom.jpg" alt="moletom" width="100" height="150" class="roupaP" id="imgP1">
-                        <img src="img/t-shir black.jpg" alt="t-shirt preta" width="100" height="150" class="roupaP" id="imgP2">
+                        <img src="img/t-shirt-black.jpg" alt="t-shirt preta" width="100" height="150" class="roupaP" id="imgP2">
                         <img src="img/look-completo.jpg" alt="look completo" width="100" height="150" class="roupaP" id="imgP3">
                     </div>
                 </div>
@@ -81,33 +80,33 @@
             <div class="form">
                 <h4 class="subtitle-form">Receba Promoções</h4>
 
-                <form action="#">
+                <form  id="form" action="https://apigenerator.dronahq.com/api/kfuTuMtf/form" method="post">
                     <div class="input-group">
                         <div class="input-box">
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="João">
+                            <input type="text" id="nome" name="nome" placeholder="João" required>
                         </div>
                         <div class="input-box">
                             <label for="sobreNome">Sobrenome:</label>
-                            <input type="text" id="sobreNome" name="sobreNome" placeholder="Ferreira">
+                            <input type="text" id="sobreNome" name="sobreNome" placeholder="Ferreira" required>
                         </div>
                         <div class="input-box">
                             <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" placeholder="dodevclothes@gmail.com">
+                            <input type="email" id="email" name="email" placeholder="dodevclothes@gmail.com" required>
                         </div>
                         <div class="input-box">
                             <label for="telefone">Telefone:</label>
-                            <input type="tel" id="telefone" name="tel" placeholder="+55 (21) 91122-3344">
+                            <input type="tel" id="tel" name="tel" placeholder="+55 (21) 91122-3344" required>
                         </div>
                     </div>
                     <div class="button-form">
-                        <button>Enviar</button>
+                        <button type="submit" name="button" value="submit" id="btnSubmit">Enviar</button>
                     </div>
                 </form>
             </div>
         </section>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="produtos.js"></script>
 </body>
 </html>

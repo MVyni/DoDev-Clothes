@@ -100,38 +100,5 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-//MUDANDO IMAGEM NA PÁGINA PRODUTOS
 
-function changeImg() {
-  roupa2.addEventListener("click", (e) => {
-    const roupaAux = roupa1.src;
-    const imgClicada = e.target.src.split("/").pop();
-    const imgP001 = imgP01.src.split("/").pop();
-    const imgP002 = imgP02.src.split("/").pop();
-    const imgP003 = imgP03.src.split("/").pop();
-    const imgG = roupa1.src.split("/").pop();
 
-    roupa1.src = e.target.src;
-    e.target.src = roupaAux;
-
-    switch(imgClicada){
-      case imgP001:
-        infosRoupa.innerText = "Moletom Cinza"
-        break;
-
-        case imgP002:
-          infosRoupa.innerText = "T-shirt black"
-          break;
-
-        case imgP003:
-          infosRoupa.innerText = "T-shirt black e Calça Jeans"
-          break;
-
-        case imgG:
-          infosRoupa.innerText = "T-shirt black e Jeans"
-          break;
-        
-      default: "";
-    }
- });
-}
