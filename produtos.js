@@ -32,29 +32,27 @@ roupa2.addEventListener("click", (e) => {
   switch (imgClicada) {
     case "moletom.jpg":
       infoRoupaNome.innerText = "Moletom Cinza";
-      infoRoupaValor.innerText = "R$ 119.00";
+      infoRoupaValor.innerText = "119.00";
       break;
 
     case "t-shirt-black.jpg":
       infoRoupaNome.innerText = "T-shirt black";
-      infoRoupaValor.innerText = "R$ 80.00";
+      infoRoupaValor.innerText = "80.00";
       break;
 
     case "look-completo.jpg":
       infoRoupaNome.innerText = "Conjunto Alfaiataria Black";
-      infoRoupaValor.innerText = "R$ 345.00";
+      infoRoupaValor.innerText = "345.00";
       break;
 
     case "t-shirt&jeans.jpg":
       infoRoupaNome.innerText = "T-shirt black e Jeans";
-      infoRoupaValor.innerText = "R$ 294.90";
+      infoRoupaValor.innerText = "294.90";
       break;
 
     default:
       "";
   }
-
-  window.localStorage.setItem("Imagem", roupa1.src.split("/").pop());
 });
 
 //SALVANDO QUANTIDADE DAS ROUPAS
@@ -87,6 +85,8 @@ btnEnviar.addEventListener("click", () => {
   }
 
   window.localStorage.setItem("Imagem", roupa1.src.split("/").pop());
+  window.localStorage.setItem("Roupa", infoRoupaNome.textContent);
+  window.localStorage.setItem("Valor", infoRoupaValor.textContent);
   window.localStorage.setItem("Quantidade", contador.value);
   window.localStorage.setItem("Tamanho", saveTam);  
 });

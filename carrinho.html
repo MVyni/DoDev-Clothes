@@ -35,7 +35,53 @@
     </header>
 
     <main>
-        
+        <div id="infoCarrinho">
+            <div id="imgCarrinho">
+                <img id="imgProduto" src="" alt="imagem" height="100px" width="100px" >
+            </div>
+            <div id="infoRoupa">
+                <p class="nomeCarrinho">0</p>
+                <p class="valorCarrinho">0</p>
+                <p class="quantCarrinho">0</p>
+                <p class="tamCarrinho">0</p>
+                <p class="totalCarrinho">0</p>
+            </div>
+
+        </div>
     </main>
+    
+    <footer>
+        <section class="formulario">
+            <div class="form">
+                <h4 class="subtitle-form">Receba Promoções</h4>
+
+                <form  id="form" action="https://apigenerator.dronahq.com/api/kfuTuMtf/form" method="post">
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="João" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="sobreNome">Sobrenome:</label>
+                            <input type="text" id="sobreNome" name="sobreNome" placeholder="Ferreira" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="dodevclothes@gmail.com" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="tel" name="tel" placeholder="+55 (21) 91122-3344" required>
+                        </div>
+                    </div>
+                    <div class="button-form">
+                        <button type="submit" name="button" value="submit" id="btnSubmit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </footer>
+
+    <script src="carrinho.js"></script>
 </body>
 </html>
