@@ -4,6 +4,7 @@ const valorRoupa = document.querySelector(".valorCarrinho");
 const qntRoupa = document.querySelector(".quantCarrinho");
 const tamRoupa = document.querySelector(".tamCarrinho");
 const totalRoupa = document.querySelector(".totalCarrinho");
+let teste = document.querySelector(".teste1");
 
 img.src = `img/${window.localStorage.getItem("Imagem")}`;
 nomeRoupa.textContent = window.localStorage.getItem("Roupa");

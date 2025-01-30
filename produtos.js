@@ -88,7 +88,7 @@ btnEnviar.addEventListener("click", () => {
   window.localStorage.setItem("Roupa", infoRoupaNome.textContent);
   window.localStorage.setItem("Valor", infoRoupaValor.textContent);
   window.localStorage.setItem("Quantidade", contador.value);
-  window.localStorage.setItem("Tamanho", saveTam);  
+  window.localStorage.setItem("Tamanho", saveTam);
 });
 
 //SALVANDO FORM NO LOCAL STORAGE

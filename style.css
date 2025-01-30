@@ -313,6 +313,35 @@ h4{
     margin-bottom: 2rem;
 }
 
+#infoCarrinho {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    gap: 30px;
+}
+
+.totalCarrinho{
+    display: flex;
+    align-items: end;
+    color: rgb(4, 30, 58);
+    font-family: "Libre Baskerville", serif;
+}
+
+.nomeCarrinho, .valorCarrinho, .quantCarrinho, .tamCarrinho{
+    color: rgb(4, 30, 58);
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.h2Carrinho{
+    color: rgb(4, 30, 58);
+    text-align: center;
+    margin: 5vh 0 5vh 0;
+}
+
 @media(max-width: 800px){
     #itens, .nav-titulo{
         display: none;
