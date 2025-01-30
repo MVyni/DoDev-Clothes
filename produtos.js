@@ -31,12 +31,12 @@ roupa2.addEventListener("click", (e) => {
 
   switch (imgClicada) {
     case "moletom.jpg":
-      infoRoupaNome.innerText = "Moletom Cinza";
+      infoRoupaNome.innerText = "Moletom Preto";
       infoRoupaValor.innerText = "119.00";
       break;
 
     case "t-shirt-black.jpg":
-      infoRoupaNome.innerText = "T-shirt black";
+      infoRoupaNome.innerText = "T-shirt Black";
       infoRoupaValor.innerText = "80.00";
       break;
 
@@ -46,7 +46,7 @@ roupa2.addEventListener("click", (e) => {
       break;
 
     case "t-shirt&jeans.jpg":
-      infoRoupaNome.innerText = "T-shirt black e Jeans";
+      infoRoupaNome.innerText = "T-shirt Black e Jeans";
       infoRoupaValor.innerText = "294.90";
       break;
 
