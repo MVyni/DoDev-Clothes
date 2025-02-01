@@ -15,6 +15,7 @@ const btnMenos = document.querySelector(".menos");
 const contador = document.querySelector("#contador");
 const tam = document.querySelector(".tamanhos");
 const btnEnviar = document.querySelector(".adicionar");
+const updateCarrinho = window.localStorage.getItem("função")
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
@@ -31,23 +32,23 @@ roupa2.addEventListener("click", (e) => {
 
   switch (imgClicada) {
     case "moletom.jpg":
-      infoRoupaNome.innerText = "Moletom Preto";
-      infoRoupaValor.innerText = "119.00";
+      infoRoupaNome.textContent = "Moletom Preto";
+      infoRoupaValor.textContent = "119.00";
       break;
 
     case "t-shirt-black.jpg":
-      infoRoupaNome.innerText = "T-shirt Black";
-      infoRoupaValor.innerText = "80.00";
+      infoRoupaNome.textContent = "T-shirt Black";
+      infoRoupaValor.textContent = "80.00";
       break;
 
     case "look-completo.jpg":
-      infoRoupaNome.innerText = "Conjunto Alfaiataria Black";
-      infoRoupaValor.innerText = "345.00";
+      infoRoupaNome.textContent = "Conjunto Alfaiataria Black";
+      infoRoupaValor.textContent = "345.00";
       break;
 
     case "t-shirt&jeans.jpg":
-      infoRoupaNome.innerText = "T-shirt Black e Jeans";
-      infoRoupaValor.innerText = "294.90";
+      infoRoupaNome.textContent = "T-shirt Black e Jeans";
+      infoRoupaValor.textContent = "294.90";
       break;
 
     default:
@@ -70,25 +71,39 @@ let saveTam = "";
 
 //SALVANDO TAMANHO DA ROUPA
 tam.addEventListener("click", (e) => {
- saveTam = e.target.value;
+  saveTam = e.target.value;
 });
 
-
+let arrayRoupas = [];
 //ENVIADO PRODUTOS PRO CARRINHO E MSG DE ÊXITO
 btnEnviar.addEventListener("click", () => {
-  if(!saveTam){
-    alert("Por favor, selecione um tamanho.")
+  if (!saveTam) {
+    alert("Por favor, selecione um tamanho.");
     return;
-
   } else {
-    alert("Produto adicionado ao carrinho.")
+    alert("Produto adicionado ao carrinho.");
   }
 
-  window.localStorage.setItem("Imagem", roupa1.src.split("/").pop());
-  window.localStorage.setItem("Roupa", infoRoupaNome.textContent);
-  window.localStorage.setItem("Valor", infoRoupaValor.textContent);
-  window.localStorage.setItem("Quantidade", contador.value);
-  window.localStorage.setItem("Tamanho", saveTam);
+  const img = roupa1.src.split("/").pop();
+  let roupa = infoRoupaNome.textContent;
+  let valor = infoRoupaValor.textContent;
+  let cont = contador.value;
+
+  let existRoupa = arrayRoupas.find((item) => item.roupa === roupa);
+  if (existRoupa) {
+    cont += 1;
+    
+  } else {
+    arrayRoupas.push({
+      img,
+      roupa,
+      cont,
+      saveTam,
+      valor,
+    });
+  }
+  updateCarrinho;
+  window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
 });
 
 //SALVANDO FORM NO LOCAL STORAGE
