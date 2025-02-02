@@ -15,7 +15,7 @@ const btnMenos = document.querySelector(".menos");
 const contador = document.querySelector("#contador");
 const tam = document.querySelector(".tamanhos");
 const btnEnviar = document.querySelector(".adicionar");
-const updateCarrinho = window.localStorage.getItem("função")
+const updateCarrinho = window.localStorage.getItem("função");
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
@@ -92,7 +92,6 @@ btnEnviar.addEventListener("click", () => {
   let existRoupa = arrayRoupas.find((item) => item.roupa === roupa);
   if (existRoupa) {
     cont += 1;
-    
   } else {
     arrayRoupas.push({
       img,
@@ -102,7 +101,6 @@ btnEnviar.addEventListener("click", () => {
       valor,
     });
   }
-  updateCarrinho;
   window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
 });
 

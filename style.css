@@ -317,7 +317,9 @@ h4{
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin-left: 10vw;
     margin-top: 10vh;
     gap: 30px;
 }
