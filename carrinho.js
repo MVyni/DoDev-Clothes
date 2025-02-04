@@ -30,10 +30,7 @@ function updateCarrinho() {
                         <div>
                         <button class="btnExcluir" 
                         data-nome = "${item.roupa}"
-                        data-valor = "${item.valor}"
-                        data-qnt = "${
-                          item.cont
-                        }" onclick="removeItem()" >X</button>
+                        onclick="removeItem()" >X</button>
                         `;
     total += item.valor * item.cont;
     divCarrinho.appendChild(createElemnt);
@@ -49,15 +46,14 @@ function removeItem() {
   divCarrinho.addEventListener("click", (e) => {
     if (e.target.classList.contains("btnExcluir")) {
       const roupa = e.target.getAttribute("data-nome");
-      const valor = e.target.getAttribute("data-valor");
-      const cont = e.target.getAttribute("data-qnt");
 
       let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
 
       if (index !== -1) {
         arrayRoupas.splice(index, 1);
       }
+      updateCarrinho();
     }
-    updateCarrinho();
   });
 }
+updateCarrinho();

@@ -74,8 +74,9 @@ tam.addEventListener("click", (e) => {
   saveTam = e.target.value;
 });
 
-let arrayRoupas = [];
 //ENVIADO PRODUTOS PRO CARRINHO E MSG DE ÊXITO
+let arrayRoupas =  JSON.parse(window.localStorage.getItem("Roupas")) || [];
+
 btnEnviar.addEventListener("click", () => {
   if (!saveTam) {
     alert("Por favor, selecione um tamanho.");
@@ -86,12 +87,12 @@ btnEnviar.addEventListener("click", () => {
 
   const img = roupa1.src.split("/").pop();
   let roupa = infoRoupaNome.textContent;
-  let valor = infoRoupaValor.textContent;
-  let cont = contador.value;
+  let valor = parseFloat(infoRoupaValor.textContent);
+  let cont = parseInt(contador.value);
 
-  let existRoupa = arrayRoupas.find((item) => item.roupa === roupa);
+  let existRoupa = arrayRoupas.find((item) => item.roupa === roupa && item.saveTam === saveTam);
   if (existRoupa) {
-    cont += 1;
+    existRoupa.cont += 1;
   } else {
     arrayRoupas.push({
       img,
@@ -102,6 +103,7 @@ btnEnviar.addEventListener("click", () => {
     });
   }
   window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
+  
 });
 
 //SALVANDO FORM NO LOCAL STORAGE
