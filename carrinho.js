@@ -51,9 +51,9 @@ function removeItem() {
 
       if (index !== -1) {
         arrayRoupas.splice(index, 1);
+        (window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas)));
       }
-      updateCarrinho();
     }
+    updateCarrinho();
   });
 }
-updateCarrinho();
