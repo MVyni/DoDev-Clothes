@@ -1,15 +1,11 @@
-const nomeRoupa = document.querySelector(".nomeCarrinho");
-const valorRoupa = document.querySelector(".valorCarrinho");
-const qntRoupa = document.querySelector(".quantCarrinho");
-const tamRoupa = document.querySelector(".tamCarrinho");
 const totalRoupa = document.querySelector(".totalCarrinho");
 const divCarrinho = document.querySelector("#infoCarrinho");
 const infosRoupa = document.querySelector("#info");
 let arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"));
-
-let total = 0;
+const valorCarrinho = document.querySelectorAll(".valorCarrinho");
 
 function updateCarrinho() {
+  let total = 0;
   divCarrinho.innerHTML = "";
 
   arrayRoupas.forEach((item) => {
@@ -24,40 +20,44 @@ function updateCarrinho() {
                     <div id="info">
                     <ul>
                     <li class="nomeCarrinho">${item.roupa}</li>
-                <li class="valorCarrinho" data-valor="${
-                  item.valor
-                }">Valor: R$ ${item.valor}</li>
+                    <li class="valorCarrinho" data-valor="${
+                      item.valor
+                    }">Valor: R$ ${item.valor}</li>
                         <li class="quantCarrinho">Quantidade: ${item.cont}x</li>
                         <li class="tamCarrinho">Tamanho: ${item.saveTam}</li>
-                    </ul>
-                </div>
-                <div>
-                <button class="btnExcluir" data-nome = "${
-                  item.roupa
-                }">X</button>
-                `;
+                        </ul>
+                        </div>
+                        <div>
+                        <button class="btnExcluir" 
+                        data-nome = "${item.roupa}"
+                        data-valor = "${item.valor}"
+                        data-qnt = "${
+                          item.cont
+                        }" onclick="removeItem()" >X</button>
+                        `;
     total += item.valor * item.cont;
     divCarrinho.appendChild(createElemnt);
   });
+  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
 }
-
 window.localStorage.setItem("função", updateCarrinho());
 
-totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
-  style: "currency",
-  currency: "BRL",
-})}`;
+function removeItem() {
+  divCarrinho.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btnExcluir")) {
+      const roupa = e.target.getAttribute("data-nome");
+      const valor = e.target.getAttribute("data-valor");
+      const cont = e.target.getAttribute("data-qnt");
 
-divCarrinho.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btnExcluir")) {
-    const roupa = e.target.getAttribute("data-nome");
+      let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
 
-    let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
-
-    if (index !== -1) {
-      let item = arrayRoupas[index];
-      arrayRoupas.splice(index, 1);
+      if (index !== -1) {
+        arrayRoupas.splice(index, 1);
+      }
     }
-  }
-  updateCarrinho();
-});
+    updateCarrinho();
+  });
+}
