@@ -1,6 +1,8 @@
 //INTERATIVIDADE MENU BURGER
 const mobileMenu = document.querySelector(".mobile-menu");
+const mobileCart = document.querySelector(".mobileCarrinho");
 const menuBurger = document.querySelector(".menuBurger");
+const menuCart = document.querySelector(".menuCarrinho");
 const nomeForm = document.getElementById("nome");
 const sobreNomeForm = document.getElementById("sobreNome");
 const emailForm = document.getElementById("email");
@@ -21,6 +23,11 @@ menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
   menuBurger.classList.toggle("ativo");
 });
+
+menuCart.addEventListener("click", () => {
+  menuCart.classList.toggle("ativo");
+  mobileCart.classList.toggle("ativo");
+})
 
 //SALVANDO FORM NO LOCAL STORAGE
 function saveName(text) {

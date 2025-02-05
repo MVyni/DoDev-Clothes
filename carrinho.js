@@ -3,6 +3,32 @@ const divCarrinho = document.querySelector("#infoCarrinho");
 const infosRoupa = document.querySelector("#info");
 let arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"));
 const valorCarrinho = document.querySelectorAll(".valorCarrinho");
+const divMobCart = document.querySelector("mobileCart-Itens");
+
+function mobileCarrinho(){
+  let total = 0;
+  divMobCart.innerHTML = "";
+
+  arrayRoupas.forEach((item) => {
+    const mobileCart = document.createElement("div");
+    mobileCart.innerHTML = `
+  <div class="mobileCarrinho">
+     <ul>
+       <li class="itensMobile"> ${item.roupa} </li>
+       <li class="itensMobile"> ${item.cont}x </li>
+       <li class="itensMobile">R$ ${item.valor} </li>
+      </ul>
+  </div>
+    `
+    total += item.valor * item.cont;
+    divMobCart.appendChild(mobileCart)
+  })
+  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
+
+}
 
 function updateCarrinho() {
   let total = 0;
@@ -32,6 +58,7 @@ function updateCarrinho() {
                         data-nome = "${item.roupa}"
                         onclick="removeItem()" >X</button>
                         `;
+
     total += item.valor * item.cont;
     divCarrinho.appendChild(createElemnt);
   });
