@@ -1,7 +1,7 @@
 //INTERATIVIDADE MENU BURGER
 const mobileMenu = document.querySelector(".mobile-menu");
-const mobileCart = document.querySelector(".mobileCarrinho");
 const menuBurger = document.querySelector(".menuBurger");
+const mobileCart = document.querySelector(".mobileCarrinho");
 const menuCart = document.querySelector(".menuCarrinho");
 const nomeForm = document.getElementById("nome");
 const sobreNomeForm = document.getElementById("sobreNome");
@@ -27,6 +27,36 @@ menuBurger.addEventListener("click", () => {
 menuCart.addEventListener("click", () => {
   menuCart.classList.toggle("ativo");
   mobileCart.classList.toggle("ativo");
+
+  const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
+  const divMobCart = document.querySelector(".mobileCart-Itens");
+  const totalRoupa = document.querySelector(".totalMobile-cart");
+
+  let total = 0;
+  divMobCart.innerHTML = "";
+
+  arrayRoupas.forEach((item) => {
+    const mobileCart = document.createElement("div");
+    mobileCart.innerHTML = `
+  <div class="item">
+     <ul>
+       <li class="itensMobile"> ${item.roupa} </li>
+       <li class="itensMobile"> ${item.cont}x </li>
+       <li class="itensMobile"> ${item.valor.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      })} </li>
+      </ul>
+  </div>
+  
+    `
+    total += item.valor * item.cont;
+  divMobCart.appendChild(mobileCart)
+  });
+  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
 })
 
 //SALVANDO FORM NO LOCAL STORAGE

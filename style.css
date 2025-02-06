@@ -43,7 +43,7 @@ header section{
     right: -200px;
     top: 0;
     width: 200px;
-    height: 30%;
+    height: auto;
     background-color: rgb(4, 30, 58);
     z-index: 2;
     transition: all 0.5s ease;
@@ -51,6 +51,33 @@ header section{
 
  .mobileCarrinho.ativo{
     right: 0;
+}
+
+.mobileCarrinho p{
+    color: #fff;
+    font-size: 16px;
+    margin: 20px 10px;
+}
+
+.titleMob-cart{
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+.mobileCarrinho ul{
+    margin: 30px 0;
+}
+
+.mobileCarrinho ul li{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin: 20px 10px;
+}
+
+.item{
+    border-bottom: 1px solid #fff;
 }
 
 .mobile-menu{

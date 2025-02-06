@@ -21,7 +21,7 @@ function mobileCarrinho(){
   </div>
     `
     total += item.valor * item.cont;
-    divMobCart.appendChild(mobileCart)
+  divMobCart.appendChild(mobileCart)
   })
   totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
     style: "currency",
