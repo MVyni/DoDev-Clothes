@@ -210,7 +210,7 @@ h4{
 
 .formulario{
     display: flex;
-    justify-content: center;
+    margin-left: 7rem;
     align-items: center;
 }
 
@@ -232,7 +232,7 @@ h4{
 }
 
 .input-box input{
-    width: 50%;
+    width: 100%;
     border: none;
     border-bottom: 1px solid rgb(4, 30, 58);
     margin: 0.6rem 0;
@@ -247,7 +247,7 @@ h4{
 }
 
 .button-form button{
-    width: 80%;
+    width: 100%;
     background-color: rgb(4, 30, 58);
     color: #fff;
     margin-top: 1.5rem;
@@ -310,7 +310,7 @@ h4{
     font-size: 0.8rem;
 }
 
-.mais, .menos, #contador{
+.mais, .menos{
     border: none;
     background-color:#fff;
     padding: 5px;
@@ -329,23 +329,12 @@ h4{
     color: #fff;
 }
 
-.adicionar{
-    padding: 5px;
-    background-color: rgb(4, 30, 58);
-    color: #fff;
+#contador{
     border: none;
-    cursor: pointer;
+    width: 20px;
+    color: rgb(4, 30, 58);
 }
 
-.adicionar:hover{
-    background-color: rgba(4, 30, 58, 0.934);
-}
-
-.tamanhos{
-    display: flex;
-    justify-content: space-between;   
-    margin-bottom: 1rem;
-}
 
 .tamanhos button{
     padding: 5px;
@@ -355,9 +344,22 @@ h4{
     cursor: pointer;
 }
 
-.tamanhos button:hover{
+.tamanhos button:hover, .tamanhos button.ativo{
     background-color: rgb(4, 30, 58);
     color: #fff;
+}
+
+.adicionar{
+    margin-top: 1rem;
+    padding: 5px;
+    background-color: rgb(4, 30, 58);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.adicionar:hover{
+    background-color: rgba(4, 30, 58, 0.934);
 }
 
 .sobre{

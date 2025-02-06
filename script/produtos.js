@@ -18,11 +18,20 @@ const btnEnviar = document.querySelector(".adicionar");
 const updateCarrinho = window.localStorage.getItem("função");
 const mobileCart = document.querySelector(".mobileCarrinho");
 const menuCart = document.querySelector(".menuCarrinho");
+const btnTam = document.querySelectorAll(".tam");
 
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
   menuBurger.classList.toggle("ativo");
 });
+
+btnTam.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+  let atualBtn = e.target;
+
+  atualBtn.classList.toggle("ativo");
+})
+})
 
 menuCart.addEventListener("click", () => {
   menuCart.classList.toggle("ativo");
