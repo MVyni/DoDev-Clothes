@@ -26,12 +26,13 @@ menuBurger.addEventListener("click", () => {
 });
 
 btnTam.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-  let atualBtn = e.target;
+  btn.addEventListener("click", () => {
+  btnTam.forEach((b) => b.classList.remove("ativo"));
 
-  atualBtn.classList.toggle("ativo");
+  btn.classList.add("ativo")
+  })
 })
-})
+
 
 menuCart.addEventListener("click", () => {
   menuCart.classList.toggle("ativo");
