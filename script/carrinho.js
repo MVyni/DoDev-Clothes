@@ -37,26 +37,32 @@ function updateCarrinho() {
   arrayRoupas.forEach((item) => {
     const createElemnt = document.createElement("div");
     createElemnt.innerHTML = `
+    <div id="allInfos">
     <div id="infoImg">
                     <img id="imgProduto" src="img/${item.img
                       .split("/")
                       .pop()}" alt="imagem" height="150px" width="100px" >
                     </div>
                     
-                    <div id="info">
+                    <div id="infoCart">
                     <ul>
                     <li class="nomeCarrinho">${item.roupa}</li>
                     <li class="valorCarrinho" data-valor="${
-                      item.valor
-                    }">Valor: R$ ${item.valor}</li>
+                      item.valor}">
+                      Valor: ${item.valor.toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}</li>
                         <li class="quantCarrinho">Quantidade: ${item.cont}x</li>
                         <li class="tamCarrinho">Tamanho: ${item.saveTam}</li>
                         </ul>
                         </div>
                         <div>
-                        <button class="btnExcluir" 
+                        <button class="btnExcluirItem" 
                         data-nome = "${item.roupa}"
                         onclick="removeItem()" >X</button>
+                        </div>
+                        </div>
                         `;
 
     total += item.valor * item.cont;
@@ -71,7 +77,7 @@ window.localStorage.setItem("função", updateCarrinho());
 
 function removeItem() {
   divCarrinho.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btnExcluir")) {
+    if (e.target.classList.contains("btnExcluirItem")) {
       const roupa = e.target.getAttribute("data-nome");
 
       let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
