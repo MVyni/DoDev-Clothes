@@ -4,6 +4,15 @@ const infosRoupa = document.querySelector("#info");
 let arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"));
 const valorCarrinho = document.querySelectorAll(".valorCarrinho");
 const divMobCart = document.querySelector("mobileCart-Itens");
+const mobileMenu = document.querySelector(".mobile-menu");
+const menuBurger = document.querySelector(".menuBurger");
+
+
+menuBurger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("ativo");
+  menuBurger.classList.toggle("ativo");
+});
+
 
 function mobileCarrinho(){
   let total = 0;

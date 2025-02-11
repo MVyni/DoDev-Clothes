@@ -1,8 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 *{
     padding: 0;
     margin: 0;
@@ -35,6 +33,7 @@ header section{
     color: rgb(4, 30, 58);
     z-index: 3;
     transition: all 0.5s ease;
+    cursor: pointer;
 }
 
 .menuCarrinho.ativo{
@@ -58,13 +57,12 @@ header section{
 
 .mobileCarrinho p{
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     margin: 20px 10px;
 }
 
 .titleMob-cart{
-    text-decoration: underline;
-    text-underline-offset: 1px;
+    border-bottom: 1px solid #fff;
 }
 
 .mobileCarrinho ul{
@@ -117,9 +115,10 @@ header section{
 
 .mobile-menu p{
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     margin: 20px 10px;
     cursor: pointer;
+    border-bottom: 1px solid #fff;
 }
 
 .menuBurger{
@@ -160,7 +159,7 @@ header section{
     text-decoration: none;
     color: rgb(4, 30, 58);
     font-family: "Libre Baskerville", serif;
-    font-size: 0.8rem;;
+    font-size: 0.9 rem;;
 }
 .nav-bar a:hover{
     text-decoration: underline;
@@ -198,6 +197,11 @@ header section{
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+}
+
+.imgMainP:hover{
+    transform: scale(1.1);
+    transition: 0.7s;
 }
 
 h4{
@@ -283,24 +287,26 @@ h4{
     width: 50%;
     display: flex;
     justify-content: center;
-    margin: 50px 0px 0px 100px ;
+    margin: 50px 0px 0px 50px ;
 }
 
 .roupa02{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    cursor: pointer;
 }
 
-.roupa02 img{
-    cursor: pointer;
+
+.roupaP:hover{
+    transform: scale(1.1);
+    transition: 0.7s;
 }
 
 .content-info{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-    margin-left: -10rem;
 }
 
 .info-roupa{
@@ -417,6 +423,7 @@ h4{
 }
 
 @media(max-width: 800px){
+
     #itens, .nav-titulo{
         display: none;
     }
@@ -433,4 +440,24 @@ h4{
     .content-info{
         margin-left: 50px;
     }
+
+    .content-produtos{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #roupa1{
+        width: 200px;
+        height: 330px;
+    }
+
+    .roupaP{
+        width: 60px;
+        height: 110px;
+    }
 }
+
+
