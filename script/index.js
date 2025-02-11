@@ -22,11 +22,15 @@ const infosRoupa = document.querySelector(".info-roupa .nome");
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
   menuBurger.classList.toggle("ativo");
+  menuCart.classList.remove("ativo");
+  mobileCart.classList.remove("ativo");
 });
 
 menuCart.addEventListener("click", () => {
   menuCart.classList.toggle("ativo");
   mobileCart.classList.toggle("ativo");
+  mobileMenu.classList.remove("ativo");
+  menuBurger.classList.remove("ativo");
 
   const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
   const divMobCart = document.querySelector(".mobileCart-Itens");
@@ -47,8 +51,8 @@ menuCart.addEventListener("click", () => {
         currency: "BRL",
       })} </li>
       </ul>
-  </div>
-  
+      </div>
+      <div>
     `
     total += item.valor * item.cont;
   divMobCart.appendChild(mobileCart)

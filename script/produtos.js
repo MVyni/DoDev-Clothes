@@ -23,6 +23,8 @@ const btnTam = document.querySelectorAll(".tam");
 menuBurger.addEventListener("click", () => {
   mobileMenu.classList.toggle("ativo");
   menuBurger.classList.toggle("ativo");
+  menuCart.classList.remove("ativo");
+  mobileCart.classList.remove("ativo");
 });
 
 btnTam.forEach((btn) => {
@@ -37,6 +39,8 @@ btnTam.forEach((btn) => {
 menuCart.addEventListener("click", () => {
   menuCart.classList.toggle("ativo");
   mobileCart.classList.toggle("ativo");
+  mobileMenu.classList.remove("ativo");
+  menuBurger.classList.remove("ativo");
 
   const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
   const divMobCart = document.querySelector(".mobileCart-Itens");
