@@ -458,6 +458,20 @@ h4{
         width: 60px;
         height: 110px;
     }
+
+    .item{
+        display: flex;
+        align-items: start;
+        gap: 10px;
+    }
+
+   .item ul{
+    margin: 0;
+   }
+
+    .btnExcluirItem{
+        color: #fff;
+    }
 }
 
 

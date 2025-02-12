@@ -15,7 +15,6 @@ const btnMenos = document.querySelector(".menos");
 const contador = document.querySelector("#contador");
 const tam = document.querySelector(".tamanhos");
 const btnEnviar = document.querySelector(".adicionar");
-const updateCarrinho = window.localStorage.getItem("função");
 const mobileCart = document.querySelector(".mobileCarrinho");
 const menuCart = document.querySelector(".menuCarrinho");
 const btnTam = document.querySelectorAll(".tam");
@@ -41,37 +40,13 @@ menuCart.addEventListener("click", () => {
   mobileCart.classList.toggle("ativo");
   mobileMenu.classList.remove("ativo");
   menuBurger.classList.remove("ativo");
+});
 
-  const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
+  let arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
   const divMobCart = document.querySelector(".mobileCart-Itens");
   const totalRoupa = document.querySelector(".totalMobile-cart");
 
-  let total = 0;
-  divMobCart.innerHTML = "";
-
-  arrayRoupas.forEach((item) => {
-    const mobileCart = document.createElement("div");
-    mobileCart.innerHTML = `
-  <div class="item">
-     <ul>
-       <li class="itensMobile"> ${item.roupa} </li>
-       <li class="itensMobile"> ${item.cont}x </li>
-       <li class="itensMobile"> ${item.valor.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      })} </li>
-      </ul>
-  </div>
   
-    `
-    total += item.valor * item.cont;
-  divMobCart.appendChild(mobileCart)
-  });
-  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
-})
 
 //TROCANDO IMAGEM E TEXTO DA IMAGEM
 roupa2.addEventListener("click", (e) => {
@@ -126,7 +101,7 @@ tam.addEventListener("click", (e) => {
 });
 
 //ENVIADO PRODUTOS PRO CARRINHO E MSG DE ÊXITO
-let arrayRoupas =  JSON.parse(window.localStorage.getItem("Roupas")) || [];
+arrayRoupas =  JSON.parse(window.localStorage.getItem("Roupas")) || [];
 
 btnEnviar.addEventListener("click", () => {
   if (!saveTam) {
@@ -154,8 +129,56 @@ btnEnviar.addEventListener("click", () => {
     });
   }
   window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
-  
+  cartMobile();
 });
+
+function cartMobile(){
+  let total = 0;
+  divMobCart.innerHTML = "";
+
+  arrayRoupas.forEach((item) => {
+    const mobileCart = document.createElement("div");
+    mobileCart.innerHTML = `
+  <div class="item">
+     <ul>
+       <li class="itensMobile"> ${item.roupa} </li>
+       <li class="itensMobile"> ${item.cont}x </li>
+       <li class="itensMobile"> ${item.valor.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      })} </li>
+      </ul>
+      <div>
+                        <button class="btnExcluirItem" 
+                        data-nome = "${item.roupa}">X</button>
+                        </div>
+  </div>
+  
+    `
+    total += item.valor * item.cont;
+  divMobCart.appendChild(mobileCart)
+  });
+  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
+}
+cartMobile();
+
+divMobCart.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btnExcluirItem")) {
+    const roupa = e.target.getAttribute("data-nome");
+
+    let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
+
+    if (index !== -1) {
+      arrayRoupas.splice(index, 1);
+      window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
+    }
+    cartMobile();
+  }
+});
+
 
 //SALVANDO FORM NO LOCAL STORAGE
 function saveName(text) {

@@ -31,10 +31,13 @@ menuCart.addEventListener("click", () => {
   mobileCart.classList.toggle("ativo");
   mobileMenu.classList.remove("ativo");
   menuBurger.classList.remove("ativo");
+})
 
-  const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
-  const divMobCart = document.querySelector(".mobileCart-Itens");
-  const totalRoupa = document.querySelector(".totalMobile-cart");
+const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
+const divMobCart = document.querySelector(".mobileCart-Itens");
+const totalRoupa = document.querySelector(".totalMobile-cart");
+
+function cartMobile() {
 
   let total = 0;
   divMobCart.innerHTML = "";
@@ -51,17 +54,36 @@ menuCart.addEventListener("click", () => {
         currency: "BRL",
       })} </li>
       </ul>
-      </div>
       <div>
+                        <button class="btnExcluirItem" 
+                        data-nome = "${item.roupa}">X</button>
+                        </div>
+      </div>
     `
     total += item.valor * item.cont;
   divMobCart.appendChild(mobileCart)
   });
+  
   totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
   })}`;
-})
+}
+cartMobile()
+
+divMobCart.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btnExcluirItem")) {
+    const roupa = e.target.getAttribute("data-nome");
+
+    let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
+
+    if (index !== -1) {
+      arrayRoupas.splice(index, 1);
+      window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
+    }
+    cartMobile();
+  }
+});
 
 //SALVANDO FORM NO LOCAL STORAGE
 function saveName(text) {

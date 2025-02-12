@@ -20,37 +20,59 @@ menuCart.addEventListener("click", () => {
   mobileCart.classList.toggle("ativo");
   mobileMenu.classList.remove("ativo");
   menuBurger.classList.remove("ativo");
+})
 
   const arrayRoupas = JSON.parse(window.localStorage.getItem("Roupas"))
   const divMobCart = document.querySelector(".mobileCart-Itens");
   const totalRoupa = document.querySelector(".totalMobile-cart");
 
-  let total = 0;
-  divMobCart.innerHTML = "";
+  function cartMobile() {
 
-  arrayRoupas.forEach((item) => {
-    const mobileCart = document.createElement("div");
-    mobileCart.innerHTML = `
-  <div class="item">
-     <ul>
-       <li class="itensMobile"> ${item.roupa} </li>
-       <li class="itensMobile"> ${item.cont}x </li>
-       <li class="itensMobile"> ${item.valor.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      })} </li>
-      </ul>
-  </div>
+    let total = 0;
+    divMobCart.innerHTML = "";
   
-    `
-    total += item.valor * item.cont;
-  divMobCart.appendChild(mobileCart)
+    arrayRoupas.forEach((item) => {
+      const mobileCart = document.createElement("div");
+      mobileCart.innerHTML = `
+    <div class="item">
+       <ul>
+         <li class="itensMobile"> ${item.roupa} </li>
+         <li class="itensMobile"> ${item.cont}x </li>
+         <li class="itensMobile"> ${item.valor.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        })} </li>
+        </ul>
+        <div>
+                          <button class="btnExcluirItem" 
+                          data-nome = "${item.roupa}">X</button>
+                          </div>
+        </div>
+      `
+      total += item.valor * item.cont;
+    divMobCart.appendChild(mobileCart)
+    });
+    
+    totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    })}`;
+  }
+  cartMobile()
+  
+  divMobCart.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btnExcluirItem")) {
+      const roupa = e.target.getAttribute("data-nome");
+  
+      let index = arrayRoupas.findIndex((item) => item.roupa === roupa);
+  
+      if (index !== -1) {
+        arrayRoupas.splice(index, 1);
+        window.localStorage.setItem("Roupas", JSON.stringify(arrayRoupas));
+      }
+      cartMobile();
+    }
   });
-  totalRoupa.textContent = `Total: ${total.toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
-})
 
 function saveName(text) {
     window.sessionStorage.setItem("nome", text);
